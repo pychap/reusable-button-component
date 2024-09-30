@@ -1,13 +1,23 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 // extend interface from HTMLAttributes to add things
 // whatever props I get I want to pass to the button
 interface Props extends HTMLAttributes<"button"> {
-  type = "button", 
-  size = "md", 
-  isfilled,
-  theme = "light", 
-  classes,   
+  type?: "button" | "submit"; 
+  size?: "sm" | "md" | "lg"; 
+  isfilled?: boolean;
+  theme?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark";
+  classes?: string;   
 }
+// now hiting ctrl + space gives me all the props
 
 const { 
   type = "button", 

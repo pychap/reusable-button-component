@@ -15,13 +15,7 @@ import "./css/main.css";
 		<h1>Astro Buttons</h1>
 
 		<div class="button-div">
-			<Button 
-			isfilled 
-			classes="cool"
-			tabindex={0} 
-			theme="danger" 
-			size="lg" 
-			>Click here</Button></div>
+			<Button isfilled theme="success" size="lg" type="button" tabindex={0}><span>Click here</span><span>»</span></Button></div>
 		<style>
 			/* bring in OpenProps CSS for dark background */
 			@import "https://unpkg.com/open-props";
@@ -30,10 +24,6 @@ import "./css/main.css";
 				background-color: #333;
 				color: #cecece;
 			}
-
-				/* .cool {
-					background-color: gray;
-				} */
 		</style>
 	</body>
 </html>
