@@ -1,5 +1,6 @@
 ---
-
+import Button from "../components/Button.astro";
+import "./css/main.css";
 ---
 
 <html lang="en">
@@ -11,6 +12,21 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>Astro Buttons</h1>
+
+		<div class="button-div">
+			<Button 
+			isfilled 
+			tabindex={0} 
+			theme="primary"
+			>Click here</Button></div>
+		<style>
+			/* bring in OpenProps CSS for dark background */
+			@import "https://unpkg.com/open-props";
+			@import "https://unpkg.com/open-props/normalize.min.css";
+				background-color: #333;
+				color: #cecece;
+
+		</style>
 	</body>
 </html>
