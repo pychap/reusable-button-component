@@ -24,10 +24,6 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.cool {
-  background-color: yellow;
-}
-
 .button-div {
   display: flex;
   flex-direction: column;

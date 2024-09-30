@@ -1,9 +1,19 @@
 ---
+// extend interface from HTMLAttributes to add things
+// whatever props I get I want to pass to the button
+interface Props extends HTMLAttributes<"button"> {
+  type = "button", 
+  size = "md", 
+  isfilled,
+  theme = "light", 
+  classes,   
+}
+
 const { 
   type = "button", 
   size = "md", 
   isfilled,
-  theme, 
+  theme = "light", 
   classes, 
   ...rest 
   } = Astro.props;
@@ -27,7 +37,7 @@ const foreground = theme === "light" ? "var(--primary)" : "var(--light)";
   foreground,
   background
 }}>
-    button {
+:where(button) {
     /* resets */
     font: inherit;
     cursor: pointer;
@@ -47,9 +57,9 @@ const foreground = theme === "light" ? "var(--primary)" : "var(--light)";
     transition: box-shadow 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
       opacity 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
       scale 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+}
 
-  button.filled {
+ :where(button.filled) {
     background-color: var(--bkg);
     color: var(--color);
     border: none;
@@ -61,10 +71,20 @@ const foreground = theme === "light" ? "var(--primary)" : "var(--light)";
 
   button:hover {
     opacity: 0.8;
-    scale: 1.05;
+    scale: 1.03;
   }
 
   button:focus-visible {
     box-shadow: 0 0 0 0.1em var(--light), 0 0 0 0.3em var(--bkg);
+  }
+
+  [data-size="sm"] {
+    font-size: 0.8rem;
+  }
+  [data-size="md"] {
+    font-size: 1.1rem;
+  }
+  [data-size="lg"] {
+    font-size: 1.5rem;
   }
 </style>

@@ -17,16 +17,23 @@ import "./css/main.css";
 		<div class="button-div">
 			<Button 
 			isfilled 
+			classes="cool"
 			tabindex={0} 
-			theme="primary"
+			theme="danger" 
+			size="lg" 
 			>Click here</Button></div>
 		<style>
 			/* bring in OpenProps CSS for dark background */
 			@import "https://unpkg.com/open-props";
 			@import "https://unpkg.com/open-props/normalize.min.css";
+			body {	
 				background-color: #333;
 				color: #cecece;
+			}
 
+				/* .cool {
+					background-color: gray;
+				} */
 		</style>
 	</body>
 </html>
